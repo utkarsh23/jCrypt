@@ -8,6 +8,7 @@ public class Implementation {
 		Implementation implementation = new Implementation();
 		implementation.caesarDemo();
 		implementation.monoAlphabeticDemo();
+		implementation.railFenceDemo();
 	}
 
 	public void caesarDemo() {
@@ -30,6 +31,15 @@ public class Implementation {
 		System.out.println("Plaintext: \"" + testString + "\"");
 		System.out.println("Encrypted: \"" + monoAlphabetic.encrypt(testString) + "\"");
 		System.out.println("Decrypted: \"" + monoAlphabetic.decrypt(monoAlphabetic.encrypt(testString)) + "\"");
+	}
+
+	public void railFenceDemo() {
+		RailFence railFence = new RailFence();
 		System.out.println("--------------------");
+		railFence.cipherImplementations(1);
+		System.out.println("--------------------");
+		System.out.println("Plaintext: \"" + testString + "\"");
+		System.out.println("Encrypted: \"" + railFence.encrypt(testString) + "\"");
+		System.out.println("Decrypted: \"" + railFence.decrypt(railFence.encrypt(testString)) + "\"");
 	}
 }
