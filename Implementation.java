@@ -1,14 +1,13 @@
-import java.util.*;
-
 import cryptography.*;
 
 public class Implementation {
-	String testString = "Easy to Break";
+	String testString = "I am hurt badly HELP";
 	public static void main(String[] args) {
 		Implementation implementation = new Implementation();
 		implementation.caesarDemo();
 		implementation.monoAlphabeticDemo();
 		implementation.railFenceDemo();
+		implementation.scytaleDemo();
 	}
 
 	public void caesarDemo() {
@@ -41,5 +40,16 @@ public class Implementation {
 		System.out.println("Plaintext: \"" + testString + "\"");
 		System.out.println("Encrypted: \"" + railFence.encrypt(testString) + "\"");
 		System.out.println("Decrypted: \"" + railFence.decrypt(railFence.encrypt(testString)) + "\"");
+	}
+
+	public void scytaleDemo() {
+		Scytale scytale = new Scytale(4,5);
+		System.out.println("--------------------");
+		scytale.cipherImplementations(2);
+		System.out.println("--------------------");
+		System.out.println("Plaintext: \"" + testString + "\"");
+		System.out.println("Encrypted: \"" + scytale.encrypt(testString) + "\"");
+		System.out.println("Decrypted: \"" + scytale.decrypt(scytale.encrypt(testString)) + "\"");
+		System.out.println("--------------------");
 	}
 }

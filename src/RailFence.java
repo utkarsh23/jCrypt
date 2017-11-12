@@ -1,6 +1,6 @@
 package cryptography;
 
-public class RailFence extends Transposition implements Cipher{
+public class RailFence extends Transposition implements Cipher {
 	public String encrypt(String plaintext) {
 		String returnString = "";
 		for (int a = 0; a < plaintext.length(); a += 2) {
