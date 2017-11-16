@@ -1,9 +1,15 @@
 import cryptography.*;
+import java.util.*;
 
 public class Implementation {
-	String testString = "I am hurt badly HELP";
+	String testString;
+	String testString_2;
 	public static void main(String[] args) {
 		Implementation implementation = new Implementation();
+		implementation.testString_2 = "I am hurt badly HELP";
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Enter the string: ");
+		implementation.testString = scan.nextLine();
 		implementation.caesarDemo();
 		implementation.monoAlphabeticDemo();
 		implementation.railFenceDemo();
@@ -47,9 +53,9 @@ public class Implementation {
 		System.out.println("--------------------");
 		scytale.cipherImplementations(2);
 		System.out.println("--------------------");
-		System.out.println("Plaintext: \"" + testString + "\"");
-		System.out.println("Encrypted: \"" + scytale.encrypt(testString) + "\"");
-		System.out.println("Decrypted: \"" + scytale.decrypt(scytale.encrypt(testString)) + "\"");
+		System.out.println("Plaintext: \"" + testString_2 + "\"");
+		System.out.println("Encrypted: \"" + scytale.encrypt(testString_2) + "\"");
+		System.out.println("Decrypted: \"" + scytale.decrypt(scytale.encrypt(testString_2)) + "\"");
 		System.out.println("--------------------");
 	}
 }

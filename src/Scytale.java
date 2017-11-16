@@ -18,11 +18,21 @@ public class Scytale extends Transposition implements Cipher {
 		for (int a = 0; a < size_l; a++) {
 			for (int b = 0; b < size_w; b++) {
 				if (index < plaintext.length()) {
-					array[b][a] = plaintext.charAt(index);
+					try {
+						array[b][a] = plaintext.charAt(index);
+					}
+					catch (ArrayIndexOutOfBoundsException e) {
+						System.out.println("Error! Index out of bound.");
+					}
 					index++;
 				}
 				else {
-					array[b][a] = null;
+					try {
+						array[b][a] = null;
+					}
+					catch (ArrayIndexOutOfBoundsException e) {
+						System.out.println("Error! Index out of bound.");
+					}
 				}
 			}
 		}
